@@ -1,4 +1,5 @@
 package Framework;
+import com.cucumber.listener.Reporter;
 import enums.Browsers;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
@@ -20,7 +21,7 @@ import java.util.concurrent.TimeUnit;
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "rerun:target/cucumber-reports/rerun.txt"
-        },plugin = "json:target/cucumber-reports/CucumberTestReport.json")
+        },plugin = "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html")
 
 public class TestRunner {
     private TestNGCucumberRunner testNGCucumberRunner;
@@ -68,6 +69,7 @@ public class TestRunner {
     @AfterClass(alwaysRun = true)
     public void tearDownClass() throws Exception {
         testNGCucumberRunner.finish();
+        Reporter.loadXMLConfig(new File("C:\\Users\\qv\\IdeaProjects\\testngcucumber\\src\\main\\resources\\config\\extent-config.xml"));
     }
 
     @AfterMethod
