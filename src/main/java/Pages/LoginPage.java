@@ -40,13 +40,13 @@ public class LoginPage {
       Assert.assertEquals(driver.getCurrentUrl(),"https://fp-pre.qustodio.com/");
    }
 
-   public void insertValidCredentials(LoginModel Login){
+   public void insertValidCredentials( ){
     WebDriverWait wait=new WebDriverWait(driver,20);
     wait.until(ExpectedConditions.visibilityOf(emailInput));
     emailInput.clear();
-    emailInput.sendKeys(Login.getEmail());
+    emailInput.sendKeys("adytestare+816a@gmail.com");
     passwordInput.clear();
-    passwordInput.sendKeys(Login.getPassword());
+    passwordInput.sendKeys("test123456");
 
    }
 
