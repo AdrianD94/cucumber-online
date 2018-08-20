@@ -45,11 +45,7 @@ public class StepsDefinition extends TestRunner {
         loginPage.verifyLoginScreen();
     }
 
-    @When("^User insert valid credentials$")
-    public void userInsertValidCredentials() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        loginPage.insertValidCredentials();
-    }
+
 
 
     @And("^Click on Login button$")
@@ -66,5 +62,9 @@ public class StepsDefinition extends TestRunner {
     }
 
 
-
+    @When("^User insert \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void userInsertAnd(String email, String password) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        loginPage.insertValidCredentials(email,password);
+    }
 }

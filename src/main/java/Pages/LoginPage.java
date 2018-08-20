@@ -32,6 +32,11 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"login_button\"]/span")
     private WebElement logInButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"user_switcher\"]/div/ul\n")
+    private WebElement dashboardPage;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"logout_button\"]/img")
+    private WebElement logOutButton;
 
 
 
@@ -40,13 +45,15 @@ public class LoginPage {
       Assert.assertEquals(driver.getCurrentUrl(),"https://fp-pre.qustodio.com/");
    }
 
-   public void insertValidCredentials( ){
+   public void insertValidCredentials(String email,String password ){
+    System.out.println(email);
+       System.out.println(password);
     WebDriverWait wait=new WebDriverWait(driver,20);
     wait.until(ExpectedConditions.visibilityOf(emailInput));
     emailInput.clear();
-    emailInput.sendKeys("adytestare+816a@gmail.com");
+    emailInput.sendKeys(email);
     passwordInput.clear();
-    passwordInput.sendKeys("test123456");
+    passwordInput.sendKeys(password);
 
    }
 
@@ -55,8 +62,10 @@ public class LoginPage {
    }
 
    public void DashboardRedirectCheck() throws InterruptedException {
-        Thread.sleep(3000);
-        Assert.assertEquals(driver.getCurrentUrl(),"https://fp-pre.qustodio.com/user-activity/summary");
+        WebDriverWait wait=new WebDriverWait(driver,20);
+        wait.until(ExpectedConditions.visibilityOf(dashboardPage));
+        Assert.assertTrue(dashboardPage.isDisplayed());
+
    }
 
 }

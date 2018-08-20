@@ -69,7 +69,7 @@ public class TestRunner {
     @AfterClass(alwaysRun = true)
     public void tearDownClass() throws Exception {
         testNGCucumberRunner.finish();
-        Reporter.loadXMLConfig(new File("C:\\Users\\qv\\IdeaProjects\\testngcucumber\\src\\main\\resources\\config\\extent-config.xml"));
+        Reporter.loadXMLConfig(new File("src\\main\\resources\\config\\extent-config.xml"));
     }
 
     @AfterMethod
