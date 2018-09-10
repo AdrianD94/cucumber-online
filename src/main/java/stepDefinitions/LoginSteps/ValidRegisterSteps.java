@@ -51,7 +51,7 @@ public class ValidRegisterSteps extends TestRunner {
     @Then("^user is redirected to the verify email page$")
     public void userIsRedirectedToTheVerifyEmailPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+       registerPage.CheckEmailVerificationScreen();
     }
 
 
