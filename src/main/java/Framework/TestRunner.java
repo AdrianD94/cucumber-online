@@ -40,7 +40,7 @@ public class TestRunner {
 
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get("https://fp-pre.qustodio.com/");
+        driver.get("https://online.io/dashboard/sign-in");
         //https://d1qoal4nguj436.cloudfront.net/sign-up
 
         Thread.sleep(1000);

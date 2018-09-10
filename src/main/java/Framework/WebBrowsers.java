@@ -19,11 +19,12 @@ public class WebBrowsers {
         switch (browserName) {
             case CHROME:
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--incognito");
-                DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-                driver = new ChromeDriver(capabilities);
+                //ChromeOptions options = new ChromeOptions();
+                //options.addArguments("--incognito");
+                //DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                //capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                //driver = new ChromeDriver(capabilities);
+                driver=new ChromeDriver();
                 break;
             case FIREFOX:
                 System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/gekodriver.exe");

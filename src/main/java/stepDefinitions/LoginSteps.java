@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class StepsDefinition extends TestRunner {
+public class LoginSteps extends TestRunner {
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 
     @DataProvider(name = "LoginJson")
@@ -38,33 +38,21 @@ public class StepsDefinition extends TestRunner {
 
 
 
-
-    @Given("^Users is on family portal$")
-    public void usersIsOnFamilyPortal() throws Throwable {
-
-        loginPage.verifyLoginScreen();
+    @Given("^user is on login page$")
+    public void user_is_on_login_page() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        loginPage.CheckIfUserIsOnLoginPage();
     }
 
-
-
-
-    @And("^Click on Login button$")
-    public void clickOnLoginButton() throws Throwable {
+    @When("^user inserts confirmed email \"([^\"]*)\" and valid  password \"([^\"]*)\"$")
+    public void user_inserts_confirmed_email_and_valid_password(String email, String password) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        loginPage.clickLoginButton();
+        loginPage.EnterCredentials(email,password);
     }
 
-
-    @Then("^users is redirected to the family portal dashboard$")
-    public void usersIsRedirectedToTheFamilyPortalDashboard() throws Throwable {
+    @Then("^user is redirected to the dashboard$")
+    public void user_is_redirected_to_the_dashboard() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        loginPage.DashboardRedirectCheck();
-    }
-
-
-    @When("^User insert \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void userInsertAnd(String email, String password) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        loginPage.insertValidCredentials(email,password);
+        loginPage.CheckDashboardRedirect();
     }
 }
