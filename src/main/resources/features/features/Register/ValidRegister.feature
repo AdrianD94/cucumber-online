@@ -8,4 +8,4 @@ Scenario Outline: Register test with valid credentials
 
 Examples:
   | email   | password |
-  | adytestare+910c@gmail.com | Test!23456 |
+  | adytestare+910d@gmail.com | Test!23456 |
