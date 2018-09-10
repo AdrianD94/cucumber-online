@@ -33,6 +33,10 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div/div/div/div/form/div[3]/button")
     private WebElement loginButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div/div/div/div/form/div[4]/p")
+    private WebElement loginError;
+
+
 
     public void CheckIfUserIsOnLoginPage(){
         WebDriverWait wait=new WebDriverWait(driver,20);
@@ -60,5 +64,18 @@ public class LoginPage {
     }
 
 
+    public void EnterInvalidCredentials(String email,String password){
+        WebDriverWait wait=new WebDriverWait(driver,20);
+        wait.until(ExpectedConditions.visibilityOf(emailInput));
+        emailInput.sendKeys(email);
+        passwordInput.sendKeys(password);
+        loginButton.click();
+    }
+
+    public void ErrorDisplayed(){
+        WebDriverWait wait=new WebDriverWait(driver,20);
+        wait.until(ExpectedConditions.visibilityOf(loginError));
+        Assert.assertEquals(loginError.getText(),"Wrong email or password");
+    }
 
 }

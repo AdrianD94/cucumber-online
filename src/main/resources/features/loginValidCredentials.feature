@@ -1,4 +1,5 @@
-Feature: Online.io login test
+
+Feature: Online.io login test with valid credentials
 Scenario Outline: Login test with valid credentials and confirmed email
   Given user is on login page
   When user inserts confirmed email "<email>" and valid  password "<password>"
