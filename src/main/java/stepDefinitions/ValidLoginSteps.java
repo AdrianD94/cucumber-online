@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class LoginSteps extends TestRunner {
+public class ValidLoginSteps extends TestRunner {
     LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 
     @DataProvider(name = "LoginJson")
@@ -55,4 +55,6 @@ public class LoginSteps extends TestRunner {
         // Write code here that turns the phrase above into concrete actions
         loginPage.CheckDashboardRedirect();
     }
+
+
 }
