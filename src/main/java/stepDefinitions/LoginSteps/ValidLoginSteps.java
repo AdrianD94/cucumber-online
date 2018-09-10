@@ -1,18 +1,15 @@
-package stepDefinitions;
+package stepDefinitions.LoginSteps;
 
 import Framework.TestRunner;
 import Models.LoginModel;
-import Pages.LoginPage;
+import Pages.LoginPage.LoginPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.DataProvider;
-import sun.rmi.runtime.Log;
 
 import java.io.File;
 import java.io.IOException;
