@@ -1,9 +1,10 @@
-Feature: Qustodio Login Test
-Scenario Outline: Login
-  Given Users is on family portal
-  When User insert "<email>" and "<password>"
-  And Click on Login button
-  Then users is redirected to the family portal dashboard
+Feature: Online.io login test
+Scenario Outline: Login test with valid credentials and confirmed email
+  Given user is on login page
+  When user inserts confirmed email "<email>" and valid  password "<password>"
+  Then user is redirected to the dashboard
+
+
 Examples:
   | email   | password |
-  | adytestare+816a@gmail.com | test123456 |
+  | adytestare+627c@gmail.com | Test!23456 |
