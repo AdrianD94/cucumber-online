@@ -1,11 +1,9 @@
-package stepDefinitions;
+package stepDefinitions.LoginSteps;
 
 import Framework.TestRunner;
 import Models.LoginModel;
-import Pages.LoginPage;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import Pages.LoginPage.LoginPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
